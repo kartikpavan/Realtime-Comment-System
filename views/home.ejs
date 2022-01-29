@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.min.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <h4>
+            <strong>
+              Real time Comment System using NodeJs , ExpressJs , MongoDb and
+              SOCKET IO
+            </strong>
+            <p class="mt-2 ">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+              inventore assumenda possimus error mollitia sunt molestias
+              architecto dolores commodi impedit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore itaque nihil sint aut et molestias tenetur a exercitationem quod non labore cum ad, commodi, unde nulla reprehenderit soluta. Vitae, temporibus!
+            </p>
+          </h4>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <h4 class="border-bottom pb-2 ">Comments</h4>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Write a comment</label>
+            <textarea id="textarea" rows="3" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <button id="submit" class="mt-4 float-end btn btn-primary rounded-pill">Post Comment</button>
+        </div> 
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="comment-box">
+            <!-- <li class="comment">
+              <div class="card border-light mb-3 rounded">
+                <div class="card-body">
+                  <h6>John Doe</h6>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo repudiandae nostrum enim doloremque et error esse assumenda consequuntur odio repellat.</p>
+                  <div>
+                    <img src="/clock.png" height="20" alt="">
+                    <small>11:30 PM</small>
+                  </div>
+                </div>
+              </div>
+            </li>
+             <li class="comment">
+              <div class="card border-light mb-3 rounded">
+                <div class="card-body">
+                  <h6>John Doe</h6>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo repudiandae nostrum enim doloremque et error esse assumenda consequuntur odio repellat.</p>
+                  <div>
+                    <img src="/clock.png" height="20" alt="">
+                    <small>11:30 PM</small>
+                  </div>
+                </div>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
