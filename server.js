@@ -20,12 +20,14 @@ const server = app.listen(port, (req, res) => {
 let io = require('socket.io')(server)
 
 io.on('connection', (socket) => {
-  console.log(`New connection ${socket.id}`)
   //recieve event 
   socket.on('comment', (data) => {//first parameter is event name and second param 
     //is the data recieved from client 
     data.time = Date()
     socket.broadcast.emit('comment', data)
+  })
+  socket.on('typing', (data) => {
+    socket.broadcast.emit('typing', data)
   })
 })
 
