@@ -17,17 +17,20 @@
               Real time Comment System using NodeJs , ExpressJs , MongoDb and
               SOCKET IO
             </strong>
-            <p class="mt-2 ">
+            <p class="mt-2">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
               inventore assumenda possimus error mollitia sunt molestias
-              architecto dolores commodi impedit? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore itaque nihil sint aut et molestias tenetur a exercitationem quod non labore cum ad, commodi, unde nulla reprehenderit soluta. Vitae, temporibus!
+              architecto dolores commodi impedit? Lorem ipsum dolor sit, amet
+              consectetur adipisicing elit. Dolore itaque nihil sint aut et
+              molestias tenetur a exercitationem quod non labore cum ad,
+              commodi, unde nulla reprehenderit soluta. Vitae, temporibus!
             </p>
           </h4>
         </div>
       </div>
       <div class="row mb-4">
         <div class="col-md-12">
-          <h4 class="border-bottom pb-2 ">Comments</h4>
+          <h4 class="border-bottom pb-2">Comments</h4>
         </div>
         <div class="col-md-12">
           <div class="form-group">
@@ -36,13 +39,32 @@
           </div>
         </div>
         <div class="col-md-12">
-          <button id="submit" class="mt-4 float-end btn btn-primary rounded-pill">Post Comment</button>
-        </div> 
+          <button
+            id="submit"
+            class="mt-4 float-end btn btn-primary rounded-pill"
+          >
+            Post Comment
+          </button>
+        </div>
       </div>
       <div class="row">
         <div class="col-md-12">
           <div class="typing text-success"></div>
           <ul class="comment-box">
+            <% for(let c of comments){ %>
+            <li class="comment">
+              <div class="card border-light mb-3 rounded">
+                <div class="card-body">
+                  <h4><%=c.username%></h4>
+                  <p><%=c.comment%></p>
+                  <div>
+                    <img src="/clock.png" height="20" alt="" />
+                    <small><%=c.createdAt %> </small>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <% } %>
           </ul>
         </div>
       </div>

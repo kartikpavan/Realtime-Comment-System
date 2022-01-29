@@ -23,11 +23,13 @@ function postComment(comment) {
     username: username,
     comment: comment
   }
+  //comment inserted in dom
   appendtoDom(data)
   textarea.value = ''
   //boradcast
   boradcastComment(data)
   //store in MongoDb
+  syncDb(data)
 }
 
 function appendtoDom(data) {
@@ -75,5 +77,16 @@ socket.on('typing', (data) => {
 textarea.addEventListener('keyup', (e) => {
   socket.emit('typing', { username })
 })
+
+
 //debounce article
 // https://www.educative.io/edpresso/how-to-use-the-debounce-function-in-javascript?aid=5082902844932096&utm_source=google&utm_medium=cpc&utm_campaign=edpresso-dynamic&gclid=CjwKCAjwqpP2BRBTEiwAfpiD-wQYCgiTiiXkrkuaiU5FqBnVYqGnqhKetIUbJU_pba9SgV_7aTrObhoCo38QAvD_BwE
+
+//api calls
+async function syncDb(data) {
+  const headers = {
+    'Content-Type': 'application/json'
+  }
+  const result = await fetch('/api/comments', { method: 'POST', body: JSON.stringify(data), headers })
+  console.log(result)
+}
